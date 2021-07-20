@@ -13,7 +13,7 @@ let package = Package(
     .target(
       name: "MTPopup",
       dependencies: [],
-      path: "MTPopup"
+      path: "Classes"
     ),
   ]
 )
