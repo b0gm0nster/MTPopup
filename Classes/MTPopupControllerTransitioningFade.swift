@@ -6,6 +6,9 @@
 //  Copyright © 2016年 伯驹 黄. All rights reserved.
 //
 
+import UIKit
+import CoreGraphics
+
 class MTPopupControllerTransitioningFade: MTPopupControllerTransitioning {
 
     func popupControllerAnimateTransition(_ context: MTPopupControllerTransitioningContext, completion: (() -> Void)?) {

@@ -6,6 +6,8 @@
 //  Copyright © 2016年 伯驹 黄. All rights reserved.
 //
 
+import UIKit
+
 extension UIViewController {
     private struct AssociatedKeys {
         static var landscapeContentSizeInPopupKey: String? = "landscapeContentSizeInPopup"
@@ -28,7 +30,6 @@ extension UIViewController {
         if contentSize != .zero {
             view.frame = CGRect(origin: .zero, size: contentSize)
         }
-        mt_viewDidLoad()
     }
 
     func mt_presentViewController(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Void)?) {
@@ -37,8 +38,9 @@ extension UIViewController {
             return
         }
 
-        let controller = popupController.value(forKey: "containerViewController") as? UIViewController
-        controller?.present(viewControllerToPresent, animated: animated, completion: completion)
+        let controller = popupController.containerViewController!
+  
+        controller.present(viewControllerToPresent, animated: animated, completion: completion)
     }
 
     func mt_dismissViewControllerAnimated(_ animated: Bool, completion: (() -> Void)?) {
@@ -53,14 +55,14 @@ extension UIViewController {
     var mt_presentedViewController: UIViewController? {
         guard let popupController = popupController else { return self.mt_presentedViewController }
 
-        let controller = popupController.value(forKey: "containerViewController") as? UIViewController
-        return controller?.presentedViewController
+        let controller = popupController.containerViewController!
+        return controller.presentedViewController
     }
 
     var mt_presentingViewController: UIViewController? {
         guard let popupController = popupController else { return self.mt_presentingViewController }
-        let controller = popupController.value(forKey: "containerViewController") as? UIViewController
-        return controller?.presentingViewController
+        let controller = popupController.containerViewController!
+        return controller.presentingViewController
     }
 
     static let screenW = UIScreen.main.bounds.width

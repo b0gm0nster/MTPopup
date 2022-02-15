@@ -6,6 +6,8 @@
 //  Copyright © 2016年 伯驹 黄. All rights reserved.
 //
 
+import UIKit
+
 enum MTPopupControllerTransitioningAction {
     case present, dismiss
 }
@@ -18,7 +20,7 @@ enum MTPopupTransitionStyle {
     case slideVertical, fade, custom
 }
 
-public class MTPopupController: NSObject {
+public class MTPopupController : NSObject {
     /// Default formSheet
     public var style: MTPopupStyle = .formSheet
 

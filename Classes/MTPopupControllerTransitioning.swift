@@ -2,6 +2,10 @@
 //  Copyright © 2016年 伯驹 黄. All rights reserved.
 //
 
+import UIKit
+import Foundation
+
+
 protocol MTPopupControllerTransitioning {
     /**
      Return duration of transitioning, it will be used to animate transitioning of background view.

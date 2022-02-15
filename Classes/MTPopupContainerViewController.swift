@@ -6,6 +6,8 @@
 //  Copyright © 2016年 伯驹 黄. All rights reserved.
 //
 
+import UIKit
+
 public class MTPopupContainerViewController: UIViewController {
 
     override public var preferredStatusBarStyle: UIStatusBarStyle {
